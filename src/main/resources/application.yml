@@ -1,3 +1,22 @@
 server.port: 8888
-spring.cloud.config.server.git.uri: https://github.com/ojha583/ConfigServer
-encrypt.key: AbsdbsUB@1344nkvjnfkvnkdf@UUIBBNDNdcff
+
+spring:
+  application:
+    name: configserver
+  cloud:
+    config:
+      server:
+        git:
+          uri: https://github.com/ojha583/ConfigServer
+
+#Symmetric key
+#encrypt.key: AbsdbsUB@1344nkvjnfkvnkdf@UUIBBNDNdcff
+
+#Asymmetric key
+encrypt:
+  key-store:
+    location: classpath:/AsymmetricKeys/password.jks
+    password: Test@123
+    alias: password
+
+
